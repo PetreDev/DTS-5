@@ -8,8 +8,6 @@ services:
     volumes:
       - namenode-data:/tmp/hadoop-hadoop/dfs/name
       - ./init-namenode.sh:/tmp/init-namenode.sh
-      - ./assignment.sh:/tmp/assignment.sh
-      - ./data:/data
       - ./hadoop-config:/opt/hadoop/etc/hadoop
     user: "root"
 
