@@ -85,4 +85,23 @@
         <value>true</value>
         <description>Whether to enable speculative execution for reduce tasks.</description>
     </property>
+
+    <!-- Environment Variables for Hadoop Distribution -->
+    <property>
+        <name>yarn.app.mapreduce.am.env</name>
+        <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+        <description>Environment for Application Master.</description>
+    </property>
+
+    <property>
+        <name>mapreduce.map.env</name>
+        <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+        <description>Environment for map tasks.</description>
+    </property>
+
+    <property>
+        <name>mapreduce.reduce.env</name>
+        <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+        <description>Environment for reduce tasks.</description>
+    </property>
 </configuration>
