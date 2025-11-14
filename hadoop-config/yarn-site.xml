@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!-- ResourceManager Configuration -->
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>resourcemanager</value>
+        <description>The hostname of the ResourceManager.</description>
+    </property>
+
+    <!-- NodeManager Configuration -->
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+        <description>The auxiliary service that should be set to handle MapReduce shuffling.</description>
+    </property>
+
+    <property>
+        <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+        <description>The class to use for the mapreduce_shuffle service.</description>
+    </property>
+
+    <!-- ResourceManager Web UI -->
+    <property>
+        <name>yarn.resourcemanager.webapp.address</name>
+        <value>0.0.0.0:8088</value>
+        <description>The address of the ResourceManager web application.</description>
+    </property>
+
+    <!-- NodeManager Web UI -->
+    <property>
+        <name>yarn.nodemanager.webapp.address</name>
+        <value>0.0.0.0:8042</value>
+        <description>The address of the NodeManager web application.</description>
+    </property>
+
+    <!-- JobHistory Server Configuration -->
+    <property>
+        <name>yarn.log-aggregation-enable</name>
+        <value>true</value>
+        <description>Enable log aggregation for completed applications.</description>
+    </property>
+
+    <!-- Capacity Scheduler Configuration -->
+    <property>
+        <name>yarn.resourcemanager.scheduler.class</name>
+        <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+        <description>The class to use for the resource scheduler.</description>
+    </property>
+
+    <!-- Timeline Server (required for JobHistory) -->
+    <property>
+        <name>yarn.timeline-service.enabled</name>
+        <value>true</value>
+        <description>Enable the timeline service for application history.</description>
+    </property>
+
+    <property>
+        <name>yarn.timeline-service.hostname</name>
+        <value>resourcemanager</value>
+        <description>The hostname of the timeline service.</description>
+    </property>
+
+    <property>
+        <name>yarn.timeline-service.http-cross-origin.enabled</name>
+        <value>true</value>
+        <description>Enable CORS for timeline service.</description>
+    </property>
+
+    <!-- JobHistory Server Address -->
+    <property>
+        <name>yarn.log.server.url</name>
+        <value>http://jobhistory:19888/jobhistory/logs</value>
+        <description>The URL of the job history server.</description>
+    </property>
+
+    <!-- Memory and CPU Configuration -->
+    <property>
+        <name>yarn.nodemanager.resource.memory-mb</name>
+        <value>2048</value>
+        <description>Amount of physical memory, in MB, that can be allocated for containers.</description>
+    </property>
+
+    <property>
+        <name>yarn.nodemanager.resource.cpu-vcores</name>
+        <value>2</value>
+        <description>Number of CPU cores that can be allocated for containers.</description>
+    </property>
+
+    <!-- Application Master Configuration -->
+    <property>
+        <name>yarn.am.memory</name>
+        <value>1024</value>
+        <description>Amount of memory to allocate for the ApplicationMaster.</description>
+    </property>
+
+    <property>
+        <name>yarn.am.resource.cpu-vcores</name>
+        <value>1</value>
+        <description>Number of CPU cores to allocate for the ApplicationMaster.</description>
+    </property>
+
+    <!-- Minimum Container Configuration -->
+    <property>
+        <name>yarn.scheduler.minimum-allocation-mb</name>
+        <value>128</value>
+        <description>The minimum allocation for every container request at the RM, in MBs.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.maximum-allocation-mb</name>
+        <value>2048</value>
+        <description>The maximum allocation for every container request at the RM, in MBs.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.minimum-allocation-vcores</name>
+        <value>1</value>
+        <description>The minimum allocation for every container request at the RM, in terms of virtual CPU cores.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.maximum-allocation-vcores</name>
+        <value>2</value>
+        <description>The maximum allocation for every container request at the RM, in terms of virtual CPU cores.</description>
+    </property>
+</configuration>

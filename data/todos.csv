@@ -1,0 +1,101 @@
+id,title,description,completed,priority,created_at,updated_at,user_id
+1,Fix bug in authentication,This task involves creating comprehensive documentation for the project,True,urgent,2025-02-25 00:02:57,2025-03-06 06:02:57,4
+2,Review code changes,Perform database schema migration for the new data model,False,medium,2025-03-22 00:02:57,2025-03-29 10:02:57,18
+3,Update dependencies,Need to review the latest code changes from the development team,False,medium,2025-06-07 00:02:57,2025-07-01 08:02:57,1
+4,Complete project documentation,Integrate with the third-party API for enhanced functionality,True,low,2025-10-06 00:02:57,2025-10-30 22:02:57,15
+5,Write unit tests,There is a bug in the authentication system that needs immediate fixing,False,medium,2024-12-20 00:02:57,2025-01-16 17:02:57,1
+6,Fix bug in authentication,Write comprehensive unit tests for the new module,False,high,2024-11-23 00:02:57,2024-12-03 16:02:57,15
+7,Database migration,Need to review the latest code changes from the development team,True,medium,2025-06-03 00:02:57,2025-06-18 20:02:57,13
+8,User feedback analysis,There is a bug in the authentication system that needs immediate fixing,True,high,2025-10-27 00:02:57,2025-11-04 02:02:57,1
+9,UI redesign,Implement the new user dashboard feature as requested,False,urgent,2025-07-04 00:02:57,2025-07-10 16:02:57,1
+10,Database migration,Write comprehensive unit tests for the new module,True,low,2025-06-24 00:02:57,2025-06-28 13:02:57,13
+11,Update dependencies,Perform database schema migration for the new data model,True,urgent,2024-12-23 00:02:57,2025-01-05 12:02:57,12
+12,Performance optimization,Need to review the latest code changes from the development team,False,high,2025-06-03 00:02:57,2025-06-29 06:02:57,8
+13,User feedback analysis,Update all project dependencies to their latest stable versions,False,high,2025-09-23 00:02:57,2025-09-29 08:02:57,15
+14,Update dependencies,Implement the new user dashboard feature as requested,False,medium,2025-10-19 00:02:57,2025-11-17 04:02:57,3
+15,Monitor system health,Update all project dependencies to their latest stable versions,True,urgent,2025-03-21 00:02:57,2025-04-01 18:02:57,12
+16,User feedback analysis,There is a bug in the authentication system that needs immediate fixing,False,low,2025-06-19 00:02:57,2025-06-26 21:02:57,6
+17,API integration,Update all project dependencies to their latest stable versions,False,medium,2025-04-21 00:02:57,2025-05-10 04:02:57,9
+18,Monitor system health,Perform database schema migration for the new data model,True,high,2025-06-30 00:02:57,2025-07-11 23:02:57,1
+19,Write unit tests,Redesign the user interface for better user experience,False,medium,2025-04-26 00:02:57,2025-05-06 04:02:57,8
+20,API integration,Write comprehensive unit tests for the new module,True,urgent,2025-08-26 00:02:57,2025-09-17 14:02:57,2
+21,UI redesign,There is a bug in the authentication system that needs immediate fixing,False,urgent,2025-04-21 00:02:57,2025-05-01 03:02:57,10
+22,Update dependencies,Integrate with the third-party API for enhanced functionality,True,high,2024-11-19 00:02:57,2024-11-26 14:02:57,13
+23,Deploy to production,Deploy the latest changes to the production environment,False,low,2025-04-26 00:02:57,2025-05-22 23:02:57,16
+24,Update dependencies,Redesign the user interface for better user experience,True,high,2025-03-01 00:02:57,2025-03-11 21:02:57,8
+25,Deploy to production,Integrate with the third-party API for enhanced functionality,False,medium,2025-01-05 00:02:57,2025-01-21 10:02:57,9
+26,Implement new feature,Integrate with the third-party API for enhanced functionality,False,high,2025-01-02 00:02:57,2025-01-23 03:02:57,16
+27,Monitor system health,Implement the new user dashboard feature as requested,True,low,2025-02-06 00:02:57,2025-02-19 17:02:57,8
+28,Update dependencies,Update all project dependencies to their latest stable versions,False,low,2025-08-20 00:02:57,2025-09-04 17:02:57,16
+29,Fix bug in authentication,Implement the new user dashboard feature as requested,True,high,2025-01-30 00:02:57,2025-02-06 15:02:57,15
+30,Write unit tests,Write comprehensive unit tests for the new module,True,high,2025-10-23 00:02:57,2025-11-11 18:02:57,11
+31,Deploy to production,There is a bug in the authentication system that needs immediate fixing,True,high,2025-05-11 00:02:57,2025-05-24 17:02:57,14
+32,Implement new feature,Integrate with the third-party API for enhanced functionality,True,low,2025-04-04 00:02:57,2025-04-24 09:02:57,8
+33,Review code changes,This task involves creating comprehensive documentation for the project,False,urgent,2025-03-22 00:02:57,2025-04-12 11:02:57,8
+34,Complete project documentation,Deploy the latest changes to the production environment,False,urgent,2025-07-14 00:02:57,2025-07-31 00:02:57,14
+35,API integration,Implement the new user dashboard feature as requested,True,urgent,2024-12-04 00:02:57,2024-12-19 13:02:57,10
+36,Update dependencies,Write comprehensive unit tests for the new module,False,medium,2024-12-21 00:02:57,2025-01-15 11:02:57,18
+37,Monitor system health,Integrate with the third-party API for enhanced functionality,False,high,2025-11-01 00:02:57,2025-11-28 16:02:57,14
+38,Security audit,This task involves creating comprehensive documentation for the project,False,low,2024-11-20 00:02:57,2024-12-09 09:02:57,8
+39,User feedback analysis,Write comprehensive unit tests for the new module,False,low,2025-01-08 00:02:57,2025-01-21 14:02:57,15
+40,Create backup strategy,Perform database schema migration for the new data model,False,medium,2025-09-16 00:02:57,2025-10-06 08:02:57,3
+41,User feedback analysis,Implement the new user dashboard feature as requested,False,medium,2025-11-05 00:02:57,2025-11-26 01:02:57,20
+42,Create backup strategy,Write comprehensive unit tests for the new module,True,low,2025-05-21 00:02:57,2025-06-12 19:02:57,3
+43,API integration,Update all project dependencies to their latest stable versions,True,high,2025-02-24 00:02:57,2025-03-11 03:02:57,10
+44,Implement new feature,Perform database schema migration for the new data model,True,urgent,2025-09-13 00:02:57,2025-10-05 12:02:57,20
+45,User feedback analysis,Write comprehensive unit tests for the new module,True,high,2025-11-13 00:02:57,2025-11-28 18:02:57,4
+46,Fix bug in authentication,Redesign the user interface for better user experience,False,medium,2025-02-21 00:02:57,2025-03-10 00:02:57,13
+47,Security audit,Integrate with the third-party API for enhanced functionality,False,low,2025-11-05 00:02:57,2025-12-03 22:02:57,14
+48,Security audit,Update all project dependencies to their latest stable versions,True,medium,2024-11-26 00:02:57,2024-12-09 05:02:57,6
+49,Update dependencies,Deploy the latest changes to the production environment,False,low,2024-12-04 00:02:57,2024-12-20 01:02:57,6
+50,Performance optimization,Implement the new user dashboard feature as requested,False,low,2025-09-29 00:02:57,2025-10-23 04:02:57,5
+51,Create backup strategy,There is a bug in the authentication system that needs immediate fixing,False,medium,2025-04-18 00:02:57,2025-05-12 18:02:57,19
+52,Security audit,Need to review the latest code changes from the development team,False,low,2025-02-01 00:02:57,2025-02-24 00:02:57,16
+53,Review code changes,There is a bug in the authentication system that needs immediate fixing,False,medium,2025-01-03 00:02:57,2025-02-01 05:02:57,15
+54,Security audit,Implement the new user dashboard feature as requested,True,low,2025-04-13 00:02:57,2025-05-07 21:02:57,5
+55,Security audit,There is a bug in the authentication system that needs immediate fixing,True,high,2025-02-12 00:02:57,2025-02-20 08:02:57,12
+56,Create backup strategy,Implement the new user dashboard feature as requested,False,low,2025-05-19 00:02:57,2025-05-24 21:02:57,8
+57,Monitor system health,Update all project dependencies to their latest stable versions,True,urgent,2025-06-28 00:02:57,2025-07-20 13:02:57,2
+58,Complete project documentation,There is a bug in the authentication system that needs immediate fixing,False,low,2025-01-01 00:02:57,2025-01-06 08:02:57,1
+59,Database migration,Implement the new user dashboard feature as requested,False,high,2024-12-20 00:02:57,2025-01-18 15:02:57,6
+60,Implement new feature,Redesign the user interface for better user experience,True,low,2025-01-16 00:02:57,2025-02-09 03:02:57,1
+61,Write unit tests,Deploy the latest changes to the production environment,True,urgent,2025-02-15 00:02:57,2025-03-14 13:02:57,7
+62,Write unit tests,There is a bug in the authentication system that needs immediate fixing,True,high,2025-07-25 00:02:57,2025-08-01 08:02:57,11
+63,Review code changes,Deploy the latest changes to the production environment,True,low,2024-12-31 00:02:57,2025-01-03 03:02:57,20
+64,Performance optimization,There is a bug in the authentication system that needs immediate fixing,False,urgent,2025-07-21 00:02:57,2025-08-11 15:02:57,7
+65,UI redesign,Update all project dependencies to their latest stable versions,False,medium,2025-04-01 00:02:57,2025-04-25 05:02:57,1
+66,Security audit,Deploy the latest changes to the production environment,False,medium,2025-02-02 00:02:57,2025-02-28 00:02:57,10
+67,Complete project documentation,There is a bug in the authentication system that needs immediate fixing,True,high,2025-04-14 00:02:57,2025-04-21 06:02:57,1
+68,Security audit,Need to review the latest code changes from the development team,False,high,2025-11-04 00:02:57,2025-11-26 10:02:57,7
+69,Implement new feature,Implement the new user dashboard feature as requested,True,low,2025-05-20 00:02:57,2025-06-13 23:02:57,11
+70,User feedback analysis,Need to review the latest code changes from the development team,True,urgent,2025-05-08 00:02:57,2025-05-09 16:02:57,11
+71,Security audit,Integrate with the third-party API for enhanced functionality,True,low,2025-09-01 00:02:57,2025-09-13 02:02:57,19
+72,Complete project documentation,Need to review the latest code changes from the development team,False,high,2024-12-28 00:02:57,2025-01-23 10:02:57,18
+73,Complete project documentation,Perform database schema migration for the new data model,False,low,2024-12-07 00:02:57,2024-12-27 22:02:57,12
+74,Security audit,Implement the new user dashboard feature as requested,True,urgent,2025-01-14 00:02:57,2025-02-07 07:02:57,11
+75,Update dependencies,Redesign the user interface for better user experience,False,high,2024-12-17 00:02:57,2025-01-11 23:02:57,13
+76,Database migration,Need to review the latest code changes from the development team,True,medium,2025-07-26 00:02:57,2025-08-08 07:02:57,18
+77,Fix bug in authentication,There is a bug in the authentication system that needs immediate fixing,True,urgent,2025-08-12 00:02:57,2025-08-29 06:02:57,16
+78,Monitor system health,There is a bug in the authentication system that needs immediate fixing,False,urgent,2025-02-17 00:02:57,2025-02-22 23:02:57,20
+79,Complete project documentation,Perform database schema migration for the new data model,False,high,2024-12-06 00:02:57,2024-12-20 03:02:57,6
+80,Update dependencies,Perform database schema migration for the new data model,True,urgent,2025-02-19 00:02:57,2025-03-19 14:02:57,12
+81,Security audit,Deploy the latest changes to the production environment,True,medium,2025-10-10 00:02:57,2025-10-17 17:02:57,7
+82,Database migration,Redesign the user interface for better user experience,False,urgent,2025-10-18 00:02:57,2025-10-27 15:02:57,7
+83,UI redesign,Update all project dependencies to their latest stable versions,True,high,2025-10-22 00:02:57,2025-10-29 10:02:57,20
+84,Security audit,There is a bug in the authentication system that needs immediate fixing,False,medium,2025-11-08 00:02:57,2025-11-21 14:02:57,3
+85,Fix bug in authentication,There is a bug in the authentication system that needs immediate fixing,False,high,2025-06-15 00:02:57,2025-06-30 21:02:57,18
+86,UI redesign,Implement the new user dashboard feature as requested,True,high,2025-08-28 00:02:57,2025-09-15 09:02:57,9
+87,Update dependencies,Perform database schema migration for the new data model,False,medium,2025-10-07 00:02:57,2025-11-04 00:02:57,19
+88,Database migration,Update all project dependencies to their latest stable versions,True,medium,2025-08-09 00:02:57,2025-09-01 05:02:57,15
+89,Database migration,Implement the new user dashboard feature as requested,False,medium,2025-05-18 00:02:57,2025-05-27 06:02:57,1
+90,Monitor system health,Need to review the latest code changes from the development team,False,low,2025-11-09 00:02:57,2025-11-29 16:02:57,2
+91,Fix bug in authentication,Implement the new user dashboard feature as requested,False,high,2025-03-12 00:02:57,2025-03-27 04:02:57,2
+92,Fix bug in authentication,This task involves creating comprehensive documentation for the project,True,low,2025-01-06 00:02:57,2025-02-01 12:02:57,5
+93,Deploy to production,Perform database schema migration for the new data model,True,low,2025-02-05 00:02:57,2025-02-24 05:02:57,13
+94,Create backup strategy,Implement the new user dashboard feature as requested,False,low,2024-12-09 00:02:57,2024-12-25 21:02:57,3
+95,Monitor system health,Perform database schema migration for the new data model,True,high,2025-09-01 00:02:57,2025-09-17 12:02:57,19
+96,Create backup strategy,Redesign the user interface for better user experience,True,high,2025-11-13 00:02:57,2025-12-02 01:02:57,4
+97,Security audit,Perform database schema migration for the new data model,True,urgent,2024-12-17 00:02:57,2024-12-22 14:02:57,1
+98,Database migration,Redesign the user interface for better user experience,True,high,2025-07-06 00:02:57,2025-07-18 15:02:57,5
+99,Implement new feature,Redesign the user interface for better user experience,True,urgent,2025-10-20 00:02:57,2025-10-29 17:02:57,14
+100,Monitor system health,Write comprehensive unit tests for the new module,True,low,2025-05-01 00:02:57,2025-05-30 08:02:57,14

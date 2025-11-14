@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!-- MapReduce Framework Configuration -->
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+        <description>Execution framework set to Hadoop YARN.</description>
+    </property>
+
+    <!-- JobHistory Server Configuration -->
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>jobhistory:10020</value>
+        <description>MapReduce JobHistory Server host:port.</description>
+    </property>
+
+    <property>
+        <name>mapreduce.jobhistory.webapp.address</name>
+        <value>jobhistory:19888</value>
+        <description>MapReduce JobHistory Server Web UI host:port.</description>
+    </property>
+
+    <!-- Intermediate Data Compression -->
+    <property>
+        <name>mapreduce.map.output.compress</name>
+        <value>true</value>
+        <description>Compress map outputs to reduce network traffic.</description>
+    </property>
+
+    <property>
+        <name>mapreduce.map.output.compress.codec</name>
+        <value>org.apache.hadoop.io.compress.GzipCodec</value>
+        <description>The compression codec to use for map outputs.</description>
+    </property>
+
+    <!-- Job Configuration -->
+    <property>
+        <name>mapreduce.job.reduce.slowstart.completedmaps</name>
+        <value>0.05</value>
+        <description>Fraction of the number of maps in the job which should be complete before reduces are scheduled for the job.</description>
+    </property>
+
+    <!-- Memory Configuration for MapReduce Tasks -->
+    <property>
+        <name>mapreduce.map.memory.mb</name>
+        <value>512</value>
+        <description>The amount of memory to request from YARN for each map task.</description>
+    </property>
+
+    <property>
+        <name>mapreduce.reduce.memory.mb</name>
+        <value>1024</value>
+        <description>The amount of memory to request from YARN for each reduce task.</description>
+    </property>
+
+    <property>
+        <name>mapreduce.map.cpu.vcores</name>
+        <value>1</value>
+        <description>The number of virtual cores to request from YARN for each map task.</description>
+    </property>
+
+    <property>
+        <name>mapreduce.reduce.cpu.vcores</name>
+        <value>1</value>
+        <description>The number of virtual cores to request from YARN for each reduce task.</description>
+    </property>
+
+    <!-- Application Master Configuration -->
+    <property>
+        <name>mapreduce.am.max-attempts</name>
+        <value>2</value>
+        <description>The maximum number of application master execution attempts.</description>
+    </property>
+
+    <!-- Speculative Execution -->
+    <property>
+        <name>mapreduce.map.speculative</name>
+        <value>true</value>
+        <description>Whether to enable speculative execution for map tasks.</description>
+    </property>
+
+    <property>
+        <name>mapreduce.reduce.speculative</name>
+        <value>true</value>
+        <description>Whether to enable speculative execution for reduce tasks.</description>
+    </property>
+</configuration>

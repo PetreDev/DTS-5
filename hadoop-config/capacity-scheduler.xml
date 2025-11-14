@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!-- Root Queue Configuration -->
+    <property>
+        <name>yarn.scheduler.capacity.root.queues</name>
+        <value>production,development</value>
+        <description>The queues at the root level.</description>
+    </property>
+
+    <!-- Production Queue Configuration -->
+    <property>
+        <name>yarn.scheduler.capacity.root.production.capacity</name>
+        <value>70</value>
+        <description>Production queue capacity as a percentage of the cluster.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.production.maximum-capacity</name>
+        <value>80</value>
+        <description>Maximum capacity for production queue.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.production.state</name>
+        <value>RUNNING</value>
+        <description>State of the production queue.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.production.user-limit-factor</name>
+        <value>1</value>
+        <description>The multiple of the queue capacity which can be configured to allow a single user to acquire more resources.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.production.maximum-am-resource-percent</name>
+        <value>0.5</value>
+        <description>Maximum percent of resources in the cluster which can be used to run application masters for the queue.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.production.ordering-policy</name>
+        <value>fair</value>
+        <description>The ordering policy for the production queue.</description>
+    </property>
+
+    <!-- Development Queue Configuration -->
+    <property>
+        <name>yarn.scheduler.capacity.root.development.capacity</name>
+        <value>30</value>
+        <description>Development queue capacity as a percentage of the cluster.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.development.maximum-capacity</name>
+        <value>50</value>
+        <description>Maximum capacity for development queue.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.development.state</name>
+        <value>STOPPED</value>
+        <description>State of the development queue (stopped as requested).</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.development.user-limit-factor</name>
+        <value>1</value>
+        <description>The multiple of the queue capacity which can be configured to allow a single user to acquire more resources.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.development.maximum-am-resource-percent</name>
+        <value>0.3</value>
+        <description>Maximum percent of resources in the cluster which can be used to run application masters for the queue.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.development.ordering-policy</name>
+        <value>fifo</value>
+        <description>The ordering policy for the development queue.</description>
+    </property>
+
+    <!-- General Capacity Scheduler Settings -->
+    <property>
+        <name>yarn.scheduler.capacity.maximum-applications</name>
+        <value>10000</value>
+        <description>Maximum number of applications that can be pending and running.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.maximum-am-resource-percent</name>
+        <value>0.2</value>
+        <description>Maximum percent of resources in the cluster which can be used to run application masters.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.resource-calculator</name>
+        <value>org.apache.hadoop.yarn.util.resource.DefaultResourceCalculator</value>
+        <description>The ResourceCalculator implementation to be used to compare Resources in the scheduler.</description>
+    </property>
+
+    <!-- Node Locality Delay -->
+    <property>
+        <name>yarn.scheduler.capacity.node-locality-delay</name>
+        <value>-1</value>
+        <description>Number of missed scheduling opportunities after which the CapacityScheduler attempts to schedule rack-local containers.</description>
+    </property>
+</configuration>
