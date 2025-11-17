@@ -100,23 +100,29 @@ open http://localhost:9870
 open http://localhost:8088
 ```
 
-### 3. Upload Data and Run Job
+### 3. Upload Data and Scripts, Then Run Job
 
 ```bash
 # Upload sample data to HDFS
 docker-compose exec namenode hdfs dfs -mkdir -p /data
 docker cp data/todos.csv $(docker-compose ps -q namenode):/tmp/
-docker-compose exec namenode hdfs dfs -put /tmp/todos.csv /data/
+docker-compose exec namenode hdfs dfs -put -f /tmp/todos.csv /data/
+
+# Copy MapReduce scripts to container
+docker cp mapper.py $(docker-compose ps -q namenode):/tmp/
+docker cp reducer.py $(docker-compose ps -q namenode):/tmp/
+
+# Make scripts executable
+docker-compose exec namenode chmod +x /tmp/mapper.py /tmp/reducer.py
 
 # Run MapReduce job
 docker-compose exec namenode hadoop jar /opt/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar \
+  -files /tmp/mapper.py,/tmp/reducer.py \
   -D mapreduce.job.queuename=production \
   -input /data/todos.csv \
   -output /output \
-  -mapper /tmp/mapper.py \
-  -reducer /tmp/reducer.py \
-  -file /tmp/mapper.py \
-  -file /tmp/reducer.py
+  -mapper mapper.py \
+  -reducer reducer.py
 
 # View results
 docker-compose exec namenode hdfs dfs -cat /output/part-00000
@@ -267,25 +273,32 @@ hadoop jar ... -D mapreduce.job.queuename=development ...
 #### Basic Hadoop Streaming Command
 
 ```bash
+# First copy your scripts to the container
+docker cp mapper.py $(docker-compose ps -q namenode):/tmp/
+docker cp reducer.py $(docker-compose ps -q namenode):/tmp/
+docker-compose exec namenode chmod +x /tmp/mapper.py /tmp/reducer.py
+
+# Run the job
 docker-compose exec namenode hadoop jar \
   /opt/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar \
+  -files /tmp/mapper.py,/tmp/reducer.py \
   -D mapreduce.job.queuename=production \
   -input /data/input.csv \
   -output /output/job_$(date +%s) \
-  -mapper /tmp/mapper.py \
-  -reducer /tmp/reducer.py \
-  -file /tmp/mapper.py \
-  -file /tmp/reducer.py
+  -mapper mapper.py \
+  -reducer reducer.py
 ```
 
 #### Parameters
 
+- `-files`: Comma-separated list of files to distribute to nodes (generic option - place first)
 - `-input`: HDFS input path
 - `-output`: HDFS output path (must not exist)
-- `-mapper`: Mapper script path
-- `-reducer`: Reducer script path
-- `-file`: Files to distribute to nodes
+- `-mapper`: Mapper script basename (when using -files, just the filename)
+- `-reducer`: Reducer script basename (when using -files, just the filename)
 - `-D mapreduce.job.queuename`: Target queue
+
+**Note**: Generic options like `-files` must be placed before streaming-specific options like `-input`, `-output`, etc. When using `-files`, reference mapper/reducer by basename only.
 
 ### Job Monitoring
 
@@ -302,10 +315,15 @@ docker-compose exec namenode mapred job -kill <job_id>
 
 ### Custom MapReduce Scripts
 
-1. **Create mapper.py and reducer.py**
-2. **Make executable**: `chmod +x mapper.py reducer.py`
-3. **Copy to container**: `docker cp mapper.py namenode:/tmp/`
-4. **Run job** with appropriate parameters
+1. **Create mapper.py and reducer.py** in your project root
+2. **Make executable locally**: `chmod +x mapper.py reducer.py`
+3. **Copy to container**:
+   ```bash
+   docker cp mapper.py $(docker-compose ps -q namenode):/tmp/
+   docker cp reducer.py $(docker-compose ps -q namenode):/tmp/
+   ```
+4. **Make executable in container**: `docker-compose exec namenode chmod +x /tmp/mapper.py /tmp/reducer.py`
+5. **Run job** with appropriate parameters
 
 ## 📈 Monitoring
 
@@ -376,6 +394,59 @@ Call From namenode to datanode: Connection refused
 ```
 
 **Solution**: Check if all DataNodes are running: `docker-compose ps`
+
+#### Mapper/Reducer Scripts Not Found
+
+```
+File: file:/tmp/mapper.py does not exist.
+Streaming Command Failed!
+```
+
+**Solution**: Copy the scripts to the namenode container before running the job:
+
+```bash
+# Copy scripts to container
+docker cp mapper.py $(docker-compose ps -q namenode):/tmp/
+docker cp reducer.py $(docker-compose ps -q namenode):/tmp/
+
+# Make executable
+docker-compose exec namenode chmod +x /tmp/mapper.py /tmp/reducer.py
+```
+
+#### Unrecognized Option: -files
+
+```
+ERROR [main] streaming.StreamJob - Unrecognized option: -files
+```
+
+**Solution**: `-files` is a generic option and must be placed before streaming-specific options:
+
+```bash
+# Correct order:
+hadoop jar hadoop-streaming.jar \
+  -files /tmp/mapper.py,/tmp/reducer.py \  # Generic options first
+  -D mapreduce.job.queuename=production \  # Then streaming options
+  -input /data/todos.csv \
+  -output /output \
+  -mapper mapper.py \  # Use basename when using -files
+  -reducer reducer.py
+```
+
+#### Cannot Run Program: No Such File or Directory
+
+```
+Caused by: java.io.IOException: Cannot run program "/tmp/mapper.py": error=2, No such file or directory
+```
+
+**Solution**: When using `-files`, Hadoop distributes files to the working directory of each task. Reference mapper/reducer by basename only:
+
+```bash
+# Wrong:
+-mapper /tmp/mapper.py
+
+# Correct (when using -files):
+-mapper mapper.py
+```
 
 #### Permission Denied
 
